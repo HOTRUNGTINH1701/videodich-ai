@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101426"><meta name="description" content="VideoDich AI - dịch video, tạo phụ đề và lồng tiếng Việt.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>VideoDich AI</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+ <div class="brand-mark">✦</div><div class="brand"><b>VideoDich <span>AI</span></b><small>DỊCH VIDEO • LỒNG TIẾNG • PHỤ ĐỀ</small></div>
+ <button class="icon-btn" id="installBtn" aria-label="Cài ứng dụng" hidden>⇩</button>
+</header>
+<main>
+<section class="hero">
+ <div class="eyebrow"><i></i> TRỢ LÝ VIDEO AI</div>
+ <h1>Cho video của bạn<br><em>nói tiếng Việt.</em></h1>
+ <p>Dịch lời thoại, tạo giọng đọc tự nhiên và phụ đề đồng bộ trong một quy trình.</p>
+ <div class="hero-tags"><span>✦ Giọng AI tự nhiên</span><span>CC Phụ đề Việt</span><span>≤ 15 phút</span></div>
+</section>
+<section class="section">
+ <div class="section-head"><span class="num">01</span><h2>Video của bạn</h2></div>
+ <label class="upload-card" for="videoInput" id="dropZone">
+  <div class="upload-icon">↑</div><b id="uploadTitle">Chọn video để bắt đầu</b>
+  <small id="uploadHint">Chạm để chọn MP4, MOV hoặc WebM</small>
+  <span class="choose-btn">Chọn video <span>＋</span></span>
+  <input id="videoInput" type="file" accept="video/mp4,video/quicktime,video/webm,video/x-matroska,video/*" hidden>
+ </label>
+ <div class="file-info" id="fileInfo" hidden><span class="file-icon">▶</span><div><b id="fileName"></b><small id="fileMeta"></small></div><button id="removeFile" class="remove">×</button></div>
+ <div class="note">Giới hạn bản thử nghiệm: tối đa 15 phút mỗi video. Video được chọn chỉ nằm trên thiết bị cho tới khi gửi đi xử lý.</div>
+</section>
+<section class="section">
+ <div class="section-head"><span class="num">02</span><h2>Ngôn ngữ & giọng đọc</h2></div>
+ <div class="settings-card">
+  <label>Ngôn ngữ gốc<select id="sourceLang"><option value="auto">Tự động nhận diện</option><option>English</option><option>中文</option><option>日本語</option><option>한국어</option><option>ภาษาไทย</option><option>Français</option><option>Español</option></select></label>
+  <div class="setting-divider"></div>
+  <label>Ngôn ngữ đầu ra<div class="fixed-value">🇻🇳　Tiếng Việt <span>✓</span></div></label>
+  <div class="setting-divider"></div>
+  <label>Phong cách giọng đọc<select id="voice"><option>Giọng tự nhiên (khuyến nghị)</option><option>Giọng nữ tự nhiên</option><option>Giọng nam tự nhiên</option><option>Giọng miền Nam</option><option>Giọng miền Bắc</option></select></label>
+ </div>
+</section>
+<section class="section">
+ <div class="section-head"><span class="num">03</span><h2>Nội dung xuất</h2></div>
+ <div class="settings-card toggles">
+  <div class="toggle-row"><div><b>Phụ đề tiếng Việt</b><small>Hiển thị lời dịch trên video</small></div><label class="switch"><input id="subtitles" type="checkbox" checked><span></span></label></div>
+  <div class="setting-divider"></div>
+  <div class="toggle-row"><div><b>Lồng tiếng AI</b><small>Thay lời thoại bằng giọng Việt</small></div><label class="switch"><input id="dubbing" type="checkbox" checked><span></span></label></div>
+  <div class="setting-divider"></div>
+  <div class="toggle-row"><div><b>Phân biệt nhân vật</b><small>Cố gắng giữ giọng riêng cho từng người</small></div><label class="switch"><input id="speakers" type="checkbox" checked><span></span></label></div>
+ </div>
+</section>
+<button class="primary" id="startBtn"><span>✦</span> BẮT ĐẦU DỊCH VIDEO <b>→</b></button>
+<div class="status" id="status" role="status">Sẵn sàng khi bạn chọn video.</div>
+<section class="process-card">
+ <div class="process-title">QUY TRÌNH XỬ LÝ <span>AI WORKFLOW</span></div>
+ <div class="steps"><div><i>1</i><span>Nhận diện<br>lời thoại</span></div><b>···</b><div><i>2</i><span>Dịch sang<br>tiếng Việt</span></div><b>···</b><div><i>3</i><span>Tạo giọng<br>& phụ đề</span></div></div>
+ <p>Đây là bản PWA giao diện ban đầu. Cần kết nối máy chủ AI để thực hiện dịch và xuất video thật.</p>
+</section>
+</main>
+<footer>VIDEO DICH AI <span>•</span> BẢN THỬ NGHIỆM 0.2</footer>
+</div>
+<script src="app.js"></script>
+</body></html>
